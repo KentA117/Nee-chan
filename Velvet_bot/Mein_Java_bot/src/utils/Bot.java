@@ -19,7 +19,7 @@ public class Bot {
 
 	public static HashMap<String, Command> commands = new HashMap<String, Command>();
 
-	public static final CommmandParser parser = new CommandParser();
+	public static final CommandParser parser = new CommandParser();
 
 	public static void main(String[] args) {
 
@@ -33,7 +33,7 @@ public class Bot {
 		commands.put("ping", new PingCommand());
 	}
 
-	public static void handleComand(CommandParser.CommandContainer cmd) {
+	public static void handleCommand(CommandParser.CommandContainer cmd) {
 		if (commands.containsKey(cmd.invoke)) {
 			boolean safe = commands.get(cmd.invoke).called(cmd.args, cmd.event);
 			if (safe) {
